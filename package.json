@@ -15,8 +15,7 @@
     "type": "git",
     "url": "https://github.com/sgc-fireball/ioBroker.mqtt-broker"
   },
-  "type": "module",
-  "main": "iobroker.js",
+  "main": "main.js",
   "keywords": [
     "alexa",
     "cloud",

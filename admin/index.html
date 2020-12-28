@@ -7,6 +7,17 @@
     <link rel="stylesheet" type="text/css" href="../../css/adapter.css"/>
     <script type="text/javascript" src="../../js/translate.js"></script>
     <script type="text/javascript" src="../../js/adapter-settings.js"></script>
+    <script type="text/javascript">
+        var onChange = null;
+
+        function load(settings, _onChange) {
+            onChange = _onChange;
+        }
+
+        function save(callback) {
+            callback({});
+        }
+    </script>
 </head>
 <body>
 <div id="adapter-container">

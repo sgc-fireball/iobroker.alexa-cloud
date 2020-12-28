@@ -1,0 +1,63 @@
+
+{
+  "common": {
+    "name": "alexa-cloud",
+    "desc": "ioBroker bridge for alexa.",
+    "version": "0.1.1",
+    "title": "Alexa Cloud",
+    "authors": [
+      "Richard Huelsberg <rh+github@hrdns.de>"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "mode": "daemon",
+    "enabled": true,
+    "compact": true,
+    "messagebox": true,
+    "readme": "https://github.com/sgc-fireball/iobroker.alexa-cloud/blob/master/README.md",
+    "loglevel": "info",
+    "icon": "icon.png",
+    "materialize": true,
+    "keywords": [
+      "alexa",
+      "cloud",
+      "bridge"
+    ],
+    "extIcon": "https://raw.githubusercontent.com/sgc-fireball/iobroker.alexa-cloud/master/admin/icon.png",
+    "type": "protocols",
+    "config": {
+      "width": 800,
+      "height": 850,
+      "minWidth": 400,
+      "minHeight": 400
+    }
+  },
+  "native": {
+    "host": "mqtts://mqtt.amazon.de",
+    "username": "",
+    "password": ""
+  },
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "role": "indicator.connected",
+        "name": "If communication with amazon works",
+        "type": "boolean",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    }
+  }
+}

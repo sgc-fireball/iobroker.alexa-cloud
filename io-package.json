@@ -20,7 +20,21 @@
     "keywords": [
       "alexa",
       "cloud",
-      "bridge"
+      "bridge",
+      "homematic",
+      "bidcos",
+      "eq3",
+      "ELV",
+      "CCU",
+      "CCU1",
+      "CCU2",
+      "CCU3",
+      "OCCU",
+      "raspberrymatic",
+      "rpc",
+      "xmlrpc",
+      "binrpc",
+      "CUxD"
     ],
     "extIcon": "https://raw.githubusercontent.com/sgc-fireball/iobroker.alexa-cloud/master/admin/icon.png",
     "type": "protocols",
@@ -57,6 +71,20 @@
         "def": false
       },
       "native": {}
+    }
+  ],
+  "objects": [
+    {
+      "_id": "_design/alexa-cloud",
+      "language": "javascript",
+      "views": {
+        "listHomeMaticDevices": {
+          "map": "function(doc) {\n  if (doc._id.match(/^hm-rpc\\.[0-9]+\\.[A-Za-z0-9_-]+$/)) {\n   emit(doc._id, doc);\n  }\n}"
+        },
+        "listHueDevices": {
+          "map": "function(doc) {\n  if (doc._id.match(/^hue-extended\\.[0-9]+\\.lights\\.[^\\.]+]$/)) {\n   emit(doc._id, doc);\n  }\n}"
+        }
+      }
     }
   ]
 }

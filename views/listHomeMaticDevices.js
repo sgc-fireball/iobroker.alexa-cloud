@@ -1,7 +1,7 @@
-let fnc = function (doc) {
+let fnc = function(doc) {
     if (doc._id.match(/^hm-rpc\.[0-9]+\.[A-Za-z0-9_-]+$/)) {
         emit(doc._id, doc);
-        /*if (!!doc && !!doc.common && !!doc.native) {
+        if (!!doc && !!doc.common && !!doc.native) {
             if (!!doc.common.name && !!doc.native.TYPE && !!doc.native.ADDRESS) {
                 emit(doc._id, {
                     id: doc._id,
@@ -11,6 +11,6 @@ let fnc = function (doc) {
                     version: doc.native.VERSION
                 });
             }
-        }*/
+        }
     }
 }

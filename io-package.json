@@ -79,10 +79,10 @@
       "language": "javascript",
       "views": {
         "listHomeMaticDevices": {
-          "map": "function (doc) {if (doc._id.match(/^hm-rpc\\.[0-9]+\\.[A-Za-z0-9_-]+$/)) {if (!!doc.value && !!doc.value.common && !!doc.value.native) {if (!!doc.value.common.name && !!doc.value.native.TYPE && !!!!doc.value.native.ADDRESS) {emit(doc._id, {id: doc._id, name: doc.value.common.name, type: doc.value.native.TYPE, address: doc.value.native.ADDRESS,});}}}}"
+          "map": "function (doc) {\n    if (doc._id.match(/^hm-rpc\\.[0-9]+\\.[A-Za-z0-9_-]+$/)) {\n        if (!!doc.value && !!doc.value.common && !!doc.value.native) {\n            if (!!doc.value.common.name && !!doc.value.native.TYPE && !!!!doc.value.native.ADDRESS) {\n                emit(doc._id, {\n                    id: doc._id,\n                    name: doc.value.common.name,\n                    type: doc.value.native.TYPE,\n                    address: doc.value.native.ADDRESS,\n                });\n            }\n        }\n    }\n}"
         },
         "listHueDevices": {
-          "map": "function(doc) {\n  if (doc._id.match(/^hue-extended\\.[0-9]+\\.lights\\.[^\\.]+]$/)) {\n   emit(doc._id, doc);\n  }\n}"
+          "map": "function(doc) {\n    if (doc._id.match(/^hue-extended\\.[0-9]+\\.lights\\.[^\\.]+]$/)) {\n        emit(doc._id, doc);\n    }\n}"
         }
       }
     }

@@ -45,11 +45,6 @@
       "minHeight": 400
     }
   },
-  "native": {
-    "host": "mqtts://mqtt.amazon.de",
-    "username": "",
-    "password": ""
-  },
   "instanceObjects": [
     {
       "_id": "info",

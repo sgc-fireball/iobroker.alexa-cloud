@@ -23,3 +23,8 @@ to build their own reverse proxy to use this adapter.
 
 ## Sources
 - https://developer.amazon.com/de-DE/docs/alexa/smarthome/steps-to-build-a-smart-home-skill.html
+
+## TODO
+- https://developer.amazon.com/de-DE/docs/alexa/smarthome/steps-to-build-a-smart-home-skill.html
+- https://github.com/AlCalzone/release-script
+- https://developer.amazon.com/en-US/docs/alexa/alexa-skills-kit-sdk-for-nodejs/develop-your-first-skill.html

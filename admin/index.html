@@ -12,10 +12,30 @@
 
         function load(settings, _onChange) {
             onChange = _onChange;
+            Object.keys(settings).forEach((key) => {
+                $('#' + key).val(settings[key]);
+            });
+            onChange(false);
+            $('input[type="text"],input[type="number"]').change(function () {
+                onChange();
+            }).keyup(function () {
+                onChange();
+            });
+        }
+
+        function getSettings() {
+            return {
+                port: parseInt($('#port').val() || 31000),
+            };
         }
 
         function save(callback) {
-            callback({});
+            var values = getSettings();
+            if (values.port < 1 || values.port > 65534) {
+                showMessage(_('Please update your port (1-65534).'));
+                return;
+            }
+            callback(values);
         }
     </script>
 </head>
@@ -25,6 +45,13 @@
         <tr>
             <td style="width: 80%;">
                 Einstellungen
+                <table>
+                    <tr>
+                        <td><label class="translate" for="port">Port:</label></td>
+                        <td><input id="port" type="number" min="1" max="65534" size="5" class="value number"/></td>
+                        <td></td>
+                    </tr>
+                </table>
             </td>
             <td style="width: 20%;"><img src="icon.png"></td>
         </tr>

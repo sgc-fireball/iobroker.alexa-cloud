@@ -12,10 +12,30 @@
 
         function load(settings, _onChange) {
             onChange = _onChange;
+            Object.keys(settings).forEach((key) => {
+                $('#' + key).val(settings[key]);
+            });
+            onChange(false);
+            $('input[type="text"],input[type="number"]').change(function () {
+                onChange();
+            }).keyup(function () {
+                onChange();
+            });
+        }
+
+        function getSettings() {
+            return {
+                port: parseInt($('#port').val() || 31000),
+            };
         }
 
         function save(callback) {
-            callback({});
+            var values = getSettings();
+            if (values.port < 1 || values.port > 65534) {
+                showMessage(_('Please update your port (1-65534).'));
+                return;
+            }
+            callback(values);
         }
     </script>
 </head>
@@ -24,6 +44,13 @@
     <div class="row">
         <div class="col s12">
             <img src="icon.png" class="logo">
+        </div>
+
+        <div class="col s12 m12 l12"><hr></div>
+
+        <div class="input-field col s12 m6 l4" id="_port">
+            <input id="port" type="number" min="1" max="65534" size="5" class="value"/>
+            <label class="translate" for="port">Port:</label>
         </div>
     </div>
 </div>

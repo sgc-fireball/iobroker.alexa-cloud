@@ -37,7 +37,7 @@
       "CUxD"
     ],
     "extIcon": "https://raw.githubusercontent.com/sgc-fireball/iobroker.alexa-cloud/master/admin/icon.png",
-    "type": "protocols",
+    "type": "iot-systems",
     "config": {
       "width": 800,
       "height": 850,
@@ -68,6 +68,9 @@
       "native": {}
     }
   ],
+  "native": {
+    "port": 31000
+  },
   "objects": [
     {
       "_id": "_design/alexa-cloud",

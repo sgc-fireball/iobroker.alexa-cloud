@@ -69,7 +69,12 @@
     }
   ],
   "native": {
-    "port": 31000
+    "port": 31000,
+    "smarthome_skill_id": "amzn1.ask.skill.342d9e85-bcf8-4dfa-8f02-c04d3a186667",
+    "oauth_client_id": "amzn1.ask.skill.342d9e85-bcf8-4dfa-8f02-c04d3a186667",
+    "oauth_secret": "amzn1.ask.skill.342d9e85-bcf8-4dfa-8f02-c04d3a186667",
+    "messaging_client_id": "amzn1.application-oa2-client.1ceb814e8ef342e2bd148c963d218b6a",
+    "messaging_client_secret": "9a4465d574b88aa58303c918d7492f91da90fe4cb7208bcaa2f6fef0940a8e0c"
   },
   "objects": [
     {

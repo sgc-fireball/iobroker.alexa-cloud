@@ -1,0 +1,18 @@
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+  environment:
+    REGION:
+
+service: iobroker.alexa-cloud.private
+
+functions:
+  alexaSmartHome:
+    handler: handler.alexaSmartHome
+    timeout: 30
+    memorySize: 128
+    events:
+      - alexaSkill: amzn1.ask.skill.342d9e85-bcf8-4dfa-8f02-c04d3a186667

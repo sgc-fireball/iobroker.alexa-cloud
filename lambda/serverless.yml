@@ -1,18 +1,22 @@
-frameworkVersion: '2'
+custom:
+  iobroker_endpoint: https://iobroker.rumeln.dyndns.hrdns.de
+  smarthome_skill_id: amzn1.ask.skill.342d9e85-bcf8-4dfa-8f02-c04d3a186667
+
+service: iobroker-alexa-cloud
 
 provider:
   name: aws
   runtime: nodejs12.x
-  lambdaHashingVersion: 20201221
+  profile: iobroker
+  stage: prod
+  region: eu-west-1
   environment:
-    REGION:
-
-service: iobroker.alexa-cloud.private
+    iobroker_endpoint: ${self:custom.iobroker_endpoint}
 
 functions:
-  alexaSmartHome:
+  alexa_smarthome:
     handler: handler.alexaSmartHome
     timeout: 30
     memorySize: 128
     events:
-      - alexaSkill: amzn1.ask.skill.342d9e85-bcf8-4dfa-8f02-c04d3a186667
+      - alexaSmartHome: ${self:custom.smarthome_skill_id}

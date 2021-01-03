@@ -22,34 +22,31 @@ to build their own reverse proxy to use this adapter.
 
 ## Setup
 ### developer.amazon.com
-Create an SmartHome Skill under https://developer.amazon.com/alexa/console/ask
+Create an Smart Home Skill under https://developer.amazon.com/alexa/console/ask
 
 #### Smart Home
 - Payload version: v3
 - Smart Home service endpoint
-    - Default endpoint: https://iobroker.your.dyndns.com/iobroker/alexa-cloud/smarthome
+    - Default endpoint: `none`
 - Account Linking
     - Security Provider Information
-        - Auth Code Grant: Yes
-            - Your Web Authorization URI: https://iobroker.your.dyndns.com/iobroker/alexa-cloud/auth
-            - Access Token URI: https://iobroker.your.dyndns.com/iobroker/alexa-cloud/token
-            - Your Client ID: <amzn1.ask.skill.XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX>
-            - Your Secret: <your secret>
-            - Your Authentication Scheme: Credentials in request body
-            - Scope: iobroker
-            - Domain List: iobroker.your.dyndns.com
+        - Auth Code Grant: `Yes`
+            - Your Web Authorization URI: `https://iobroker.your.dyndns.com/iobroker/alexa-cloud/auth`
+            - Access Token URI: `https://iobroker.your.dyndns.com/iobroker/alexa-cloud/token`
+            - Your Client ID: `amzn1.ask.skill.XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX`
+            - Your Secret: `secret`
+            - Your Authentication Scheme: `Credentials in request body`
+            - Scope: `iobroker`
+            - Domain List: `iobroker.your.dyndns.com`
 - Permissions
-    - Send Alexa Events: On
+    - Send Alexa Events: `On`
 
-```bash
-cd lambda
-serverless deploy
-```
+Follow the next steps from [Lambda Readme.md](./lambda/readme.md)
 
 ## Uninstall
 ```bash
 cd lambda
-serverless remove
+sls remove
 ```
 
 ## Sources

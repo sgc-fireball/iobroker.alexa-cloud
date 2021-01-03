@@ -1,0 +1,31 @@
+{
+  "name": "iobroker.alexa-cloud-lambda",
+  "version": "0.0.1",
+  "description": "Lambda bridge for alexa to iobroker.",
+  "author": {
+    "name": "Richard Huelsberg",
+    "email": "rh+github@hrdns.de"
+  },
+  "homepage": "https://github.com/sgc-fireball/iobroker.alexa-cloud",
+  "bugs": {
+    "url": "https://github.com/sgc-fireball/iobroker.alexa-cloud/issues"
+  },
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sgc-fireball/ioBroker.mqtt-broker"
+  },
+  "keywords": [
+    "alexa",
+    "cloud",
+    "bridge",
+    "iobroker"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "dependencies": {
+    "https": "^1.0.0"
+  }
+}

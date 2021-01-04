@@ -5,8 +5,8 @@ const request = function (domain, body) {
     return new Promise((resolve, reject) => {
         const options = {
             method: 'POST',
-            protocol: 'https',
-            hostname: domain.replace('/https?:\/\//', ''),
+            protocol: 'https:',
+            hostname: domain.replace(/https?:\/\//, ''),
             path: '/iobroker/alexa-cloud/smarthome',
             headers: {
                 'Connection': 'Close',

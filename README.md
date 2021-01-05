@@ -21,6 +21,10 @@ This will also allow those who do not have the ability or means
 to build their own reverse proxy to use this adapter.
 
 ## Setup
+### Security Profile / Login with Amazon
+- https://developer.amazon.com/settings/console/securityprofile/create-security-profile.html
+- https://developer.amazon.com/settings/console/securityprofile/web-settings/update.html
+
 ### developer.amazon.com
 Create an Smart Home Skill under https://developer.amazon.com/alexa/console/ask
 

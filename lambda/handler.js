@@ -20,23 +20,24 @@ const request = function (domain, body) {
                 reject('Invalid Status: ' + response.statusCode);
                 return;
             }
-            let chunks = [];
+            let chunks = '';
             response.setEncoding('utf8');
             response.on('data', (chunk) => {
-                chunks.push(chunk);
+                chunks += chunk;
             });
             response.on('end', () => {
                 try {
-                    resolve([
-                        response.statusCode,
-                        JSON.parse(Buffer.concat(chunks).toString())
-                    ]);
+                    console.log('HTTP Status: ' + response.statusCode);
+                    console.log(chunks);
+                    resolve([response.statusCode, chunks]);
                 } catch (err) {
+                    console.error('ERROR: ' + JSON.stringify(err));
                     reject(err);
                 }
             });
         });
         request.on('error', (err) => {
+            console.error('ERROR: ' + JSON.stringify(err));
             reject(err);
         });
         if (body) {
@@ -49,5 +50,5 @@ const request = function (domain, body) {
 module.exports.alexaSmartHome = async (event, context) => {
     let code, content;
     [code, content] = await request(process.env.iobroker_endpoint, JSON.stringify(event, null, 2));
-    return {statusCode: code, body: JSON.stringify(content, null, 2)};
+    return {statusCode: code, body: content};
 };

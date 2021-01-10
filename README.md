@@ -53,6 +53,9 @@ cd lambda
 sls remove
 ```
 
+## Tests
+- https://www.jsonschemavalidator.net/
+
 ## Sources
 - https://developer.amazon.com/de-DE/docs/alexa/smarthome/steps-to-build-a-smart-home-skill.html
 - https://developer.amazon.com/de-DE/docs/alexa/account-linking/configure-authorization-code-grant.html

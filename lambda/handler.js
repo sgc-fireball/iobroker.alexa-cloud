@@ -29,15 +29,13 @@ const request = function (domain, body) {
                 try {
                     console.log('HTTP Status: ' + response.statusCode);
                     console.log(chunks);
-                    resolve([response.statusCode, chunks]);
+                    resolve(chunks);
                 } catch (err) {
-                    console.error('ERROR: ' + JSON.stringify(err));
                     reject(err);
                 }
             });
         });
         request.on('error', (err) => {
-            console.error('ERROR: ' + JSON.stringify(err));
             reject(err);
         });
         if (body) {
@@ -47,8 +45,11 @@ const request = function (domain, body) {
     });
 }
 
-module.exports.alexaSmartHome = async (event, context) => {
-    let code, content;
-    [code, content] = await request(process.env.iobroker_endpoint, JSON.stringify(event, null, 2));
-    return {statusCode: code, body: content};
+module.exports.alexaSmartHome = async (event, context, callback) => {
+    try {
+        let response = await request(process.env.iobroker_endpoint, JSON.stringify(event, null, 2));
+        callback(null, JSON.parse(response));
+    } catch (e) {
+        console.error('ERROR: ' + e.toString());
+    }
 };

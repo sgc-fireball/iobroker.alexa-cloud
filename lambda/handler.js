@@ -1,7 +1,8 @@
 const https = require('https');
+const uuid = require('uuid').v4;
 
 const request = function (domain, body) {
-    body = body || {err: "missing body"};
+    body = body || '{"error: "missing body"}';
     return new Promise((resolve, reject) => {
         const options = {
             method: 'POST',
@@ -16,7 +17,7 @@ const request = function (domain, body) {
         };
 
         const request = https.request(options, (response) => {
-            if (response.statusCode < 200 || response.statusCode >= 300) {
+            if (response.statusCode !== 200) {
                 reject('Invalid Status: ' + response.statusCode);
                 return;
             }
@@ -26,30 +27,38 @@ const request = function (domain, body) {
                 chunks += chunk;
             });
             response.on('end', () => {
-                try {
-                    console.log('HTTP Status: ' + response.statusCode);
-                    console.log(chunks);
-                    resolve(chunks);
-                } catch (err) {
-                    reject(err);
-                }
+                resolve(chunks);
             });
         });
-        request.on('error', (err) => {
-            reject(err);
-        });
-        if (body) {
-            request.write(body);
-        }
+        request.on('error', reject);
+        request.write(body);
         request.end();
     });
 }
 
 module.exports.alexaSmartHome = async (event, context, callback) => {
     try {
-        let response = await request(process.env.iobroker_endpoint, JSON.stringify(event, null, 2));
+        let response = await request(
+            process.env.iobroker_endpoint,
+            JSON.stringify(event, null, 2)
+        );
         callback(null, JSON.parse(response));
     } catch (e) {
-        console.error('ERROR: ' + e.toString());
+        const error = !!e ? e.toString() : 'Unknown bridge error.';
+        console.error('ERROR: ' + error);
+        callback(null, {
+            event: {
+                header: {
+                    namespace: 'Alexa',
+                    name: 'ErrorResponse',
+                    messageId: uuid(),
+                    payloadVersion: '3'
+                },
+                payload: {
+                    type: 'BRIDGE_UNREACHABLE',
+                    message: error
+                }
+            }
+        });
     }
 };

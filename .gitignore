@@ -1,4 +1,5 @@
 /.idea/
+/lambda/node_modules/
 /node_modules/
 /lambda/.serverless/
 

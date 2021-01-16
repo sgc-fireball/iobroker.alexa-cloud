@@ -28,9 +28,7 @@
                 port: parseInt($('#port').val() || 31000),
                 smarthome_skill_id: $('#smarthome_skill_id').val(),
                 oauth_client_id: $('#oauth_client_id').val(),
-                oauth_secret: $('#oauth_secret').val(),
-                messaging_client_id: $('#messaging_client_id').val(),
-                messaging_client_secret: $('#messaging_client_secret').val(),
+                oauth_secret: $('#oauth_secret').val()
             };
         }
 
@@ -72,15 +70,6 @@
             <input id="oauth_secret" type="text" maxlength="255" size="5" class="value" placeholder="any secret password"/>
             <label class="translate" for="oauth_secret">Oauth 2.0 Secret:</label>
         </div>
-        <div class="input-field col s12 m6 l4" id="_messaging_client_id">
-            <input id="messaging_client_id" type="text" maxlength="255" size="5" class="value" placeholder="amzn1.application-oa2-client.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"/>
-            <label class="translate" for="messaging_client_id">Messaging Client ID:</label>
-        </div>
-        <div class="input-field col s12 m6 l4" id="_messaging_client_secret">
-            <input id="messaging_client_secret" type="text" maxlength="255" size="5" class="value" placeholder="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"/>
-            <label class="translate" for="messaging_client_secret">Messaging Client Secret:</label>
-        </div>
-
     </div>
 </div>
 </body>

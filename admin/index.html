@@ -28,7 +28,9 @@
                 port: parseInt($('#port').val() || 31000),
                 smarthome_skill_id: $('#smarthome_skill_id').val(),
                 oauth_client_id: $('#oauth_client_id').val(),
-                oauth_secret: $('#oauth_secret').val(),
+                oauth_client_secret: $('#oauth_client_secret').val(),
+                alexa_client_id: $('#alexa_client_id').val(),
+                alexa_client_secret: $('#alexa_client_secret').val(),
             };
         }
 
@@ -53,10 +55,6 @@
                         <td><input id="port" type="number" min="1" max="65534" size="5" class="value number"/></td>
                         <td></td>
                     </tr>
-
-                    <tr>
-                        <td colspan="3">SmartHome Skill</td>
-                    </tr>
                     <tr>
                         <td><label class="translate" for="port">Smarthome Skill ID:</label></td>
                         <td><input id="smarthome_skill_id" type="text" maxlength="255" class="value text" placeholder="amzn1.ask.skill.XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"/></td>
@@ -64,12 +62,22 @@
                     </tr>
                     <tr>
                         <td><label class="translate" for="port">OAuth 2.0 Client ID:</label></td>
-                        <td><input id="oauth_client_id" type="text" maxlength="255" class="value text" placeholder="amzn1.ask.skill.XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"/></td>
+                        <td><input id="oauth_client_id" type="text" maxlength="255" class="value text" placeholder="any client id"/></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td><label class="translate" for="port">OAuth 2.0 Secret:</label></td>
-                        <td><input id="oauth_secret" type="text" maxlength="255" class="value text" placeholder="any secret password"/></td>
+                        <td><input id="oauth_client_secret" type="text" maxlength="255" class="value text" placeholder="any secret password"/></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><label class="translate" for="port">Alexa Client ID:</label></td>
+                        <td><input id="alexa_client_id" type="text" maxlength="255" class="value text" placeholder="amzn1.application-oa2-client.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"/></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><label class="translate" for="port">Alexa Secret:</label></td>
+                        <td><input id="alexa_client_secret" type="text" maxlength="255" class="value text" placeholder="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"/></td>
                         <td></td>
                     </tr>
                 </table>

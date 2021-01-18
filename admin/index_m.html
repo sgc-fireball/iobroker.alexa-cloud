@@ -28,7 +28,9 @@
                 port: parseInt($('#port').val() || 31000),
                 smarthome_skill_id: $('#smarthome_skill_id').val(),
                 oauth_client_id: $('#oauth_client_id').val(),
-                oauth_secret: $('#oauth_secret').val()
+                oauth_client_secret: $('#oauth_client_secret').val(),
+                alexa_client_id: $('#alexa_client_id').val(),
+                alexa_client_secret: $('#alexa_client_secret').val()
             };
         }
 
@@ -51,24 +53,32 @@
 
         <div class="col s12 m12 l12"><hr></div>
 
-        <div class="input-field col s12 m6 l4" id="_port">
+        <div class="input-field col s12 m12 l12" id="_port">
             <input id="port" type="number" min="1" max="65534" size="5" class="value"/>
             <label class="translate" for="port">Port:</label>
         </div>
 
         <div class="col s12 m12 l12"><hr></div>
 
-        <div class="input-field col s12 m6 l4" id="_smarthome_skill_id">
+        <div class="input-field col s12 m12 l12" id="_smarthome_skill_id">
             <input id="smarthome_skill_id" type="text" maxlength="255" size="5" class="value" placeholder="amzn1.ask.skill.XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"/>
             <label class="translate" for="smarthome_skill_id">Smarthome Skill ID:</label>
         </div>
-        <div class="input-field col s12 m6 l4" id="_oauth_client_id">
-            <input id="oauth_client_id" type="text" maxlength="255" size="5" class="value" placeholder="amzn1.ask.skill.XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"/>
+        <div class="input-field col s12 m12 l12" id="_oauth_client_id">
+            <input id="oauth_client_id" type="text" maxlength="255" size="5" class="value" placeholder="any client id"/>
             <label class="translate" for="oauth_client_id">OAuth 2.0 Client ID:</label>
         </div>
-        <div class="input-field col s12 m6 l4" id="_oauth_secret">
-            <input id="oauth_secret" type="text" maxlength="255" size="5" class="value" placeholder="any secret password"/>
-            <label class="translate" for="oauth_secret">Oauth 2.0 Secret:</label>
+        <div class="input-field col s12 m12 l12" id="_oauth_client_secret">
+            <input id="oauth_client_secret" type="text" maxlength="255" size="5" class="value" placeholder="any secret password"/>
+            <label class="translate" for="oauth_client_secret">Oauth 2.0 Secret:</label>
+        </div>
+        <div class="input-field col s12 m12 l12" id="_alexa_client_id">
+            <input id="alexa_client_id" type="text" maxlength="255" size="5" class="value" placeholder="amzn1.application-oa2-client.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"/>
+            <label class="translate" for="alexa_client_id">Alexa Client ID:</label>
+        </div>
+        <div class="input-field col s12 m12 l12" id="_alexa_client_secret">
+            <input id="alexa_client_secret" type="text" maxlength="255" size="5" class="value" placeholder="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"/>
+            <label class="translate" for="alexa_client_secret">Alexa Secret:</label>
         </div>
     </div>
 </div>

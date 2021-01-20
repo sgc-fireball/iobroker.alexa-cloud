@@ -59,10 +59,11 @@ sls remove
 
 ## Sources
 - https://developer.amazon.com/de-DE/docs/alexa/smarthome/steps-to-build-a-smart-home-skill.html
+- https://developer.amazon.com/en-US/docs/alexa/smarthome/get-started-with-device-templates.html
 - https://developer.amazon.com/de-DE/docs/alexa/account-linking/configure-authorization-code-grant.html
 - https://developer.amazon.com/de-DE/docs/alexa/account-linking/requirements-account-linking.html#access-token-uri-requirements
+- https://developer.amazon.com/en-US/docs/alexa/account-linking/skill-activation-api.html#get-status
 - https://developer.amazon.com/en-US/docs/alexa/device-apis/alexa-authorization.html
-- https://developer.amazon.com/en-US/docs/alexa/smarthome/get-started-with-device-templates.html#plug
 
 ## TODO
 - https://developer.amazon.com/de-DE/docs/alexa/smarthome/steps-to-build-a-smart-home-skill.html

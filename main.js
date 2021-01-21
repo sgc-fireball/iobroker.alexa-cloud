@@ -1,8 +1,25 @@
 'use strict';
 
 const Adapter = require('./lib/Adapter');
+let adapter;
 if (module.parent) {
-    module.exports = (options) => new Adapter(options);
+    adapter = module.exports = (options) => new Adapter(options);
 } else {
-    new Adapter();
+    adapter = new Adapter();
+}
+
+if (!!process) {
+    process.on('SIGINT', () => {
+        adapter && adapter.log.warn('Received SIGINT');
+    });
+
+    process.on('SIGTERM', () => {
+        adapter && adapter.log.warn('Received SIGTERM');
+    });
+
+    process.on('uncaughtException', (err) => {
+        if (adapter && adapter.log) {
+            adapter.log.warn('Exception: ' + err);
+        }
+    });
 }

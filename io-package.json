@@ -138,6 +138,9 @@
         },
         "listHueDevices": {
           "map": "function(doc) {\n    if (doc._id.match(/^hue-extended\\.[0-9]+\\.lights\\.[^\\.]+]$/)) {\n        emit(doc._id, doc);\n    }\n}"
+        },
+        "listOnvifDevices": {
+          "map": "function(doc) {\n    if (doc._id.match(/^onvif\\.[0-9]+\\.[^\\.]+]$/)) {\n        emit(doc._id, doc);\n    }\n}"
         }
       }
     }

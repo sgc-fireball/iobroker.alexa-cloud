@@ -17,19 +17,25 @@ Create an Smart Home Skill under https://developer.amazon.com/alexa/console/ask
 #### Smart Home
 - Payload version: v3
 - Smart Home service endpoint
-    - Default endpoint: `none`
+    - Default endpoint: `none` (later)
 - Account Linking
+    - Do you allow users to create an account or link to an existing account with you? `yes`
+    - Allow users to link their account to your skill from within your application or website `no`
+    - Allow users to authenticate using your mobile application `no`
     - Security Provider Information
         - Auth Code Grant: `Yes`
             - Your Web Authorization URI: `https://iobroker.your.dyndns.com/iobroker/alexa-cloud/auth`
             - Access Token URI: `https://iobroker.your.dyndns.com/iobroker/alexa-cloud/token`
-            - Your Client ID: `amzn1.ask.skill.XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX`
-            - Your Secret: `secret`
+            - Your Client ID: `amzn1.ask.skill.XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX` (copy to iobroker)
+            - Your Secret: `secret` (copy to iobroker)
             - Your Authentication Scheme: `Credentials in request body`
             - Scope: `iobroker`
             - Domain List: `iobroker.your.dyndns.com`
+            - Default Access Token Expiration Time `3600`
 - Permissions
     - Send Alexa Events: `On`
+    - Alexa Client Id: `amzn1.application-oa2-client.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX` (copy to iobroker)
+    - Alexa Client Secret: `XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX` (copy to iobroker)
 
 Follow the next steps from [Lambda Readme.md](./lambda/readme.md)
 
@@ -55,3 +61,7 @@ sls remove
 - https://developer.amazon.com/de-DE/docs/alexa/smarthome/steps-to-build-a-smart-home-skill.html
 - https://github.com/AlCalzone/release-script
 - https://developer.amazon.com/en-US/docs/alexa/alexa-skills-kit-sdk-for-nodejs/develop-your-first-skill.html
+
+## Terms of Use
+
+## Privacy Policy

@@ -137,7 +137,7 @@
           "map": "function(doc) {\n    if (doc._id.match(/^hm-rpc\\.[0-9]+\\.[A-Za-z0-9_-]+$/)) {\n        if (!!doc && !!doc.common && !!doc.native) {\n            if (!!doc.common.name && !!doc.native.TYPE && !!doc.native.ADDRESS) {\n                emit(doc._id, {\n                    id: doc._id,\n                    name: doc.common.name,\n                    type: doc.native.TYPE,\n                    address: doc.native.ADDRESS\n                });\n            }\n        }\n    }\n}"
         },
         "listHueDevices": {
-          "map": "function(doc) {\n    if (doc._id.match(/^hue-extended\\.[0-9]+\\.lights\\.[^\\.]+$/)) {\n        if (!!doc && !!doc.common && !!doc.common.name) {\n            emit(doc._id, {\n                id: doc._id,\n                name: doc.common.name\n            });\n        }\n    }\n}}"
+          "map": "function(doc) {\n    if (doc._id.match(/^hue-extended\\.[0-9]+\\.lights\\.[^\\.]+$/)) {\n        if (!!doc && !!doc.common && !!doc.common.name) {\n            emit(doc._id, {\n                id: doc._id,\n                name: doc.common.name\n            });\n        }\n    }\n}"
         },
         "listOnvifDevices": {
           "map": "function(doc) {\n    if (doc._id.match(/^onvif\\.[0-9]+\\.[^\\.]+]$/)) {\n        emit(doc._id, doc);\n    }\n}"

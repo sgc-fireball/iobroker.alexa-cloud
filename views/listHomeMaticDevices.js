@@ -11,4 +11,4 @@ let fnc = function(doc) {
             }
         }
     }
-}
+};

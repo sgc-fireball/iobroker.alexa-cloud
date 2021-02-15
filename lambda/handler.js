@@ -12,7 +12,7 @@ const request = function (domain, body) {
             headers: {
                 'Connection': 'Close',
                 'Content-Type': 'application/json',
-                'Content-Length': body.length
+                'Content-Length': Buffer.byteLength(body, 'utf-8')
             }
         };
 

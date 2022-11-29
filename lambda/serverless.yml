@@ -6,7 +6,7 @@ service: iobroker-alexa-cloud
 
 provider:
   name: aws
-  runtime: nodejs12.x
+  runtime: nodejs18.x
   profile: iobroker
   stage: prod
   region: eu-west-1

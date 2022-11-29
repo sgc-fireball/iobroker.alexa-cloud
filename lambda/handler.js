@@ -2,7 +2,7 @@ const https = require('https');
 const uuid = require('uuid').v4;
 
 const request = function (domain, body) {
-    body = body || '{"error: "missing body"}';
+    body = body || '{"error": "missing body"}';
     return new Promise((resolve, reject) => {
         const options = {
             method: 'POST',

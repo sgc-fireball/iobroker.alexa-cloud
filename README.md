@@ -1,20 +1,25 @@
 # iobroker.alexa-cloud
 
 ## Todos
+
 - add more HM / HmIP devices
 - refactor io-package to only one view
 - ONVIF
 - HUE
 
 ## Setup
+
 ### Security Profile / Login with Amazon
+
 - https://developer.amazon.com/settings/console/securityprofile/create-security-profile.html
 - https://developer.amazon.com/settings/console/securityprofile/web-settings/update.html
 
 ### developer.amazon.com
-Create an Smart Home Skill under https://developer.amazon.com/alexa/console/ask
+
+Create a Smart Home Skill under https://developer.amazon.com/alexa/console/ask
 
 #### Smart Home
+
 - Payload version: v3
 - Smart Home service endpoint
     - Default endpoint: `none` (later)
@@ -40,17 +45,20 @@ Create an Smart Home Skill under https://developer.amazon.com/alexa/console/ask
 Follow the next steps from [Lambda Readme.md](./lambda/readme.md)
 
 ## Uninstall
+
 ```bash
 cd lambda
-sls remove
+serverless remove
 ```
 
 ## Tests
+
 - https://www.jsonschemavalidator.net/
 - https://raw.githubusercontent.com/alexa/alexa-smarthome/master/validation_schemas/alexa_smart_home_message_schema.json
 - https://github.com/jaydenhinrichsen/rtsp-over-http
 
 ## Sources
+
 - https://developer.amazon.com/de-DE/docs/alexa/smarthome/steps-to-build-a-smart-home-skill.html
 - https://developer.amazon.com/en-US/docs/alexa/smarthome/get-started-with-device-templates.html
 - https://developer.amazon.com/de-DE/docs/alexa/account-linking/configure-authorization-code-grant.html
@@ -59,6 +67,7 @@ sls remove
 - https://developer.amazon.com/en-US/docs/alexa/device-apis/alexa-authorization.html
 
 ## TODO
+
 - https://developer.amazon.com/de-DE/docs/alexa/smarthome/steps-to-build-a-smart-home-skill.html
 - https://github.com/AlCalzone/release-script
 - https://developer.amazon.com/en-US/docs/alexa/alexa-skills-kit-sdk-for-nodejs/develop-your-first-skill.html

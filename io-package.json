@@ -140,7 +140,7 @@
           "map": "function(doc) {\n    if (doc._id.match(/^hue-extended\\.[0-9]+\\.lights\\.[0-9]{3}[^\\.]+$/)) {\n        if (!!doc && !!doc.common && !!doc.common.name) {\n            emit(doc._id, {\n                id: doc._id,\n                name: doc.common.name\n            });\n        }\n    }\n}"
         },
         "listOnvifDevices": {
-          "map": "function(doc) {\n    if (doc._id.match(/^alexa-cloud\\.[0-9]+\\.onvif\\.[^\\.]+]$/)) {\n        emit(doc._id, doc);\n    }\n}"
+          "map": "function(doc) {\n    if (doc._id.match(/^alexa-cloud\\.[0-9]+\\.onvif\\.[^\\.]+$/)) {\n        emit(doc._id, doc);\n    }\n}"
         }
       }
     }

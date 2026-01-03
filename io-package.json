@@ -134,13 +134,16 @@
       "language": "javascript",
       "views": {
         "listHomeMaticDevices": {
-          "map": "function(doc) {\n    if (doc._id.match(/^hm-rpc\\.[0-9]+\\.[A-Za-z0-9_-]+$/)) {\n        if (!!doc && !!doc.common && !!doc.native) {\n            if (!!doc.common.name && !!doc.native.TYPE && !!doc.native.ADDRESS) {\n                emit(doc._id, {\n                    id: doc._id,\n                    _type: 'hm-rpc',\n                    name: doc.common.name,\n                    type: doc.native.TYPE,\n                    address: doc.native.ADDRESS\n                });\n            }\n        }\n    }\n}"
+          "map": "function (doc) {\n    if (doc._id.match(/^hm-rpc\\.[0-9]+\\.[A-Za-z0-9_-]+$/)) {\n        if (!!doc && !!doc.common && !!doc.native) {\n            if (!!doc.common.name && !!doc.native.TYPE && !!doc.native.ADDRESS) {\n                emit(doc._id, {\n                    id: doc._id,\n                    _type: 'hm-rpc',\n                    name: doc.common.name,\n                    type: doc.native.TYPE,\n                    address: doc.native.ADDRESS\n                });\n            }\n        }\n    }\n}"
         },
         "listHueDevices": {
-          "map": "function(doc) {\n    if (doc._id.match(/^hue-extended\\.[0-9]+\\.lights\\.[0-9]{3}[^\\.]+$/)) {\n        if (!!doc && !!doc.common && !!doc.common.name) {\n            emit(doc._id, {\n                id: doc._id,\n                _type: 'hue-extended',\n                name: doc.common.name\n            });\n        }\n    }\n}"
+          "map": "function (doc) {\n    if (doc._id.match(/^hue-extended\\.[0-9]+\\.lights\\.[0-9]{3}[^\\.]+$/)) {\n        if (!!doc && !!doc.common && !!doc.common.name) {\n            emit(doc._id, {\n                id: doc._id,\n                _type: 'hue-extended',\n                name: doc.common.name\n            });\n        }\n    }\n}"
         },
         "listOnvifDevices": {
-          "map": "function(doc) {\n    if (doc._id.match(/^alexa-cloud\\.[0-9]+\\.onvif\\.[^\\.]+$/)) {\n        emit(doc._id, { id: doc._id, _type: 'onvif', ...doc });\n    }\n}"
+          "map": "function (doc) {\n    if (doc._id.match(/^alexa-cloud\\.[0-9]+\\.onvif\\.[^\\.]+/)) {\n        emit(doc._id, { id: doc._id, _type: 'onvif', ...doc });\n    }\n}"
+        },
+        "registerDevices": {
+          "map": "function (doc) {\n    if (doc._id.match(/^hm-rpc\\.[0-9]+\\.[A-Za-z0-9_-]+$/)) {\n        if (!!doc && !!doc.common && !!doc.native) {\n            if (!!doc.common.name && !!doc.native.TYPE && !!doc.native.ADDRESS) {\n                emit(doc._id, {\n                    id: doc._id,\n                    _type: 'hm-rpc',\n                    name: doc.common.name,\n                    type: doc.native.TYPE,\n                    address: doc.native.ADDRESS\n                });\n            }\n        }\n    } else if (doc._id.match(/^hue-extended\\.[0-9]+\\.lights\\.[0-9]{3}[^\\.]+$/)) {\n        if (!!doc && !!doc.common && !!doc.common.name) {\n            emit(doc._id, {\n                id: doc._id,\n                _type: 'hue-extended',\n                name: doc.common.name\n            });\n        }\n    } else if (doc._id.match(/^alexa-cloud\\.[0-9]+\\.onvif\\.[^\\.]+/)) {\n        emit(doc._id, {\n            id: doc._id,\n            _type: 'onvif'\n        });\n    }\n}"
         }
       }
     }

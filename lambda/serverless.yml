@@ -1,0 +1,22 @@
+custom:
+  IOBROKER_ENDPOINT: https://iobroker.rumeln.dyndns.hrdns.de
+  SMARTHOME_SKILL_ID: amzn1.ask.skill.342d9e85-bcf8-4dfa-8f02-c04d3a186667
+
+service: iobroker-alexa-cloud
+
+provider:
+  name: aws
+  runtime: nodejs24.x
+  profile: iobroker
+  stage: prod
+  region: eu-west-1
+  environment:
+    IOBROKER_ENDPOINT: ${self:custom.IOBROKER_ENDPOINT}
+
+functions:
+  alexa_smarthome:
+    handler: handler.alexaSmartHome
+    timeout: 30
+    memorySize: 128
+    events:
+      - alexaSmartHome: ${self:custom.SMARTHOME_SKILL_ID}

@@ -1,0 +1,42 @@
+{
+  "name": "iobroker.alexa-cloud",
+  "version": "0.0.5",
+  "description": "ioBroker bridge for alexa.",
+  "author": {
+    "name": "Richard Huelsberg",
+    "email": "rh+github@hrdns.de"
+  },
+  "homepage": "https://github.com/sgc-fireball/iobroker.alexa-cloud",
+  "bugs": {
+    "url": "https://github.com/sgc-fireball/iobroker.alexa-cloud/issues"
+  },
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sgc-fireball/ioBroker.mqtt-broker"
+  },
+  "main": "main.js",
+  "keywords": [
+    "alexa",
+    "cloud",
+    "bridge",
+    "iobroker"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "dependencies": {
+    "@iobroker/adapter-core": "^1.0.3",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.32",
+    "uuid": "^8.3.2",
+    "https": "^1.0.0",
+    "path": "^0.12.7",
+    "http": "^0.0.1-security",
+    "querystring": "^0.2.0"
+  }
+}

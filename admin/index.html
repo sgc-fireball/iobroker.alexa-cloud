@@ -1,0 +1,90 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../../lib/css/themes/jquery-ui/redmond/jquery-ui.min.css"/>
+    <script type="text/javascript" src="../../lib/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="../../lib/js/jquery-ui-1.10.3.full.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/adapter.css"/>
+    <script type="text/javascript" src="../../js/translate.js"></script>
+    <script type="text/javascript" src="../../js/adapter-settings.js"></script>
+    <script type="text/javascript">
+        var onChange = null;
+
+        function load(settings, _onChange) {
+            onChange = _onChange;
+            Object.keys(settings).forEach((key) => {
+                $('#' + key).val(settings[key]);
+            });
+            onChange(false);
+            $('input[type="text"],input[type="number"]').change(function () {
+                onChange();
+            }).keyup(function () {
+                onChange();
+            });
+        }
+
+        function getSettings() {
+            return {
+                port: parseInt($('#port').val() || 31000),
+                smarthome_skill_id: $('#smarthome_skill_id').val(),
+                oauth_client_id: $('#oauth_client_id').val(),
+                oauth_client_secret: $('#oauth_client_secret').val(),
+                alexa_client_id: $('#alexa_client_id').val(),
+                alexa_client_secret: $('#alexa_client_secret').val(),
+            };
+        }
+
+        function save(callback) {
+            var values = getSettings();
+            if (values.port < 1 || values.port > 65534) {
+                showMessage(_('Please update your port (1-65534).'));
+                return;
+            }
+            callback(values);
+        }
+    </script>
+</head>
+<body>
+<div id="adapter-container">
+    <table>
+        <tr>
+            <td style="width: 80%;">
+                <table>
+                    <tr>
+                        <td><label class="translate" for="port">Port:</label></td>
+                        <td><input id="port" type="number" min="1" max="65534" size="5" class="value number"/></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><label class="translate" for="port">Smarthome Skill ID:</label></td>
+                        <td><input id="smarthome_skill_id" type="text" maxlength="255" class="value text" placeholder="amzn1.ask.skill.XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"/></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><label class="translate" for="port">OAuth 2.0 Client ID:</label></td>
+                        <td><input id="oauth_client_id" type="text" maxlength="255" class="value text" placeholder="any client id"/></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><label class="translate" for="port">OAuth 2.0 Secret:</label></td>
+                        <td><input id="oauth_client_secret" type="text" maxlength="255" class="value text" placeholder="any secret password"/></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><label class="translate" for="port">Alexa Client ID:</label></td>
+                        <td><input id="alexa_client_id" type="text" maxlength="255" class="value text" placeholder="amzn1.application-oa2-client.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"/></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><label class="translate" for="port">Alexa Secret:</label></td>
+                        <td><input id="alexa_client_secret" type="text" maxlength="255" class="value text" placeholder="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"/></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </td>
+            <td style="width: 20%;"><img src="icon.png"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

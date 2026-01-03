@@ -19,7 +19,7 @@ let fnc = function (doc) {
                 name: doc.common.name
             });
         }
-    } else if (doc._id.match(/^alexa-cloud\.[0-9]+\.onvif\.[^\.]+/)) {
+    } else if (doc._id.match(/^alexa-cloud\.[0-9]+\.onvif\.[^\.]+$/)) {
         emit(doc._id, {
             id: doc._id,
             _type: 'onvif'

@@ -4,7 +4,7 @@ let fnc = function(doc) {
             if (!!doc.common.name && !!doc.native.TYPE && !!doc.native.ADDRESS) {
                 emit(doc._id, {
                     id: doc._id,
-                    type: 'hm-rpc',
+                    _type: 'hm-rpc',
                     name: doc.common.name,
                     type: doc.native.TYPE,
                     address: doc.native.ADDRESS

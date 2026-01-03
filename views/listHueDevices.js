@@ -3,7 +3,7 @@ let fnc = function(doc) {
         if (!!doc && !!doc.common && !!doc.common.name) {
             emit(doc._id, {
                 id: doc._id,
-                type: 'hue-extended',
+                _type: 'hue-extended',
                 name: doc.common.name
             });
         }

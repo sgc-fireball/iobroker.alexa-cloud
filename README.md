@@ -44,6 +44,22 @@ Create a Smart Home Skill under https://developer.amazon.com/alexa/console/ask
 
 Follow the next steps from [Lambda Readme.md](./lambda/readme.md)
 
+### ioBroker install/update
+
+- Open ioBroker `Adapter` Tab.
+- Remove `iobroker.alexa-cloud`, if exists.
+- Enable `Expert` mode.
+- Click on the `GitHub`-Icon.
+- Select `from Github`.
+- Enter `https://github.com/sgc-fireball/iobroker.alexa-cloud.git`
+
+or
+
+```bash
+$ iobroker del alexa-cloud
+$ iobroker url sgc-fireball/ioBroker.alexa-cloud
+```
+
 ## Uninstall
 
 ```bash

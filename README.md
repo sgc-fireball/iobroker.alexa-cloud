@@ -68,9 +68,7 @@ serverless remove
 
 ## Tests
 
-- https://www.jsonschemavalidator.net/
 - https://raw.githubusercontent.com/alexa/alexa-smarthome/master/validation_schemas/alexa_smart_home_message_schema.json
-- https://github.com/jaydenhinrichsen/rtsp-over-http
 
 ## Sources
 
@@ -90,3 +88,10 @@ serverless remove
 ## Terms of Use
 
 ## Privacy Policy
+
+## Sources
+
+### RTSP to Browser
+
+- http://blog.northfield.ws/streaming-rtsp-directly-to-browsers/
+- https://github.com/jaydenhinrichsen/rtsp-over-http

@@ -31,6 +31,7 @@
                 oauth_client_secret: $('#oauth_client_secret').val(),
                 alexa_client_id: $('#alexa_client_id').val(),
                 alexa_client_secret: $('#alexa_client_secret').val(),
+                endpoint: $('#endpoint').val(),
             };
         }
 
@@ -78,6 +79,11 @@
                     <tr>
                         <td><label class="translate" for="port">Alexa Secret:</label></td>
                         <td><input id="alexa_client_secret" type="text" maxlength="255" class="value text" placeholder="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"/></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><label class="translate" for="port">Public Endpoint:</label></td>
+                        <td><input id="endpoint" type="text" maxlength="2048" class="value text" placeholder="http://"/></td>
                         <td></td>
                     </tr>
                 </table>
